@@ -1,0 +1,3 @@
+{
+    "template.twig.directory.compile": "%application%/data/cache/twig/compile"
+}
