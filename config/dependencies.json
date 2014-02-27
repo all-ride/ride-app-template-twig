@@ -1,0 +1,66 @@
+{
+    "dependencies": [
+        {
+            "class": "ride\\library\\template\\engine\\TwigLoader",
+            "id": "twig",
+            "calls": [
+                {
+                    "method": "__construct",
+                    "arguments": [
+                        {
+                            "name": "path",
+                            "type": "parameter",
+                            "properties": {
+                                "key": "system.directory.view.twig",
+                                "default": "view/twig"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "class": "ride\\library\\system\\file\\File",
+            "id": "twig.compile",
+            "calls": [
+                {
+                    "method": "__construct",
+                    "arguments": [
+                        {
+                            "name": "path",
+                            "type": "parameter",
+                            "properties": {
+                                "key": "template.twig.directory.compile"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interfaces": ["ride\\library\\template\\engine\\Engine", "ride\\library\\template\\engine\\TwigEngine"], 
+            "class": "ride\\library\\template\\engine\\TwigEngine",
+            "id": "twig",
+            "calls": [
+                {
+                    "method": "__construct",
+                    "arguments": [
+                        {
+                            "name": "compileDirectory",
+                            "type": "dependency",
+                            "properties": {
+                                "interface": "ride\\library\\system\\file\\File",
+                                "id": "twig.compile"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interfaces": "ride\\application\\cache\\control\\CacheControl",
+            "class": "ride\\application\\cache\\control\\TwigCacheControl",
+            "id": "twig"
+        }         
+    ]
+}
