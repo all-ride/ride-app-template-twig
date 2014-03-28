@@ -18,20 +18,20 @@ class TwigCacheControl extends AbstractCacheControl {
 
     /**
      * Instance of the Twig template engine
-     * @var ride\library\template\engine\TwigEngine
+     * @var \ride\library\template\engine\TwigEngine
      */
     private $engine;
 
     /**
      * Instance of the file system
-     * @var ride\library\system\file\FileSystem
+     * @var \ride\library\system\file\FileSystem
      */
     private $fileSystem;
 
     /**
      * Constructs a new twig cache control
-     * @param ride\library\template\engine\TwigEngine $engine
-     * @param ride\library\system\file\FileSystem $fileSystem
+     * @param \ride\library\template\engine\TwigEngine $engine
+     * @param \ride\library\system\file\FileSystem $fileSystem
      * @return null
      */
     public function __construct(TwigEngine $engine, FileSystem $fileSystem) {
